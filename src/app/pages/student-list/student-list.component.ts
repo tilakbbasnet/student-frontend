@@ -33,6 +33,7 @@ export class StudentListComponent implements OnInit{
   deleteStudent(id: number): void {
     this.studentService.deleteStudent(id).subscribe((result: string) => {
       if(result === 'success') {
+        console.log('Student deleted successfully');
         this.getStudentList();
         alert('Student deleted successfully!');
       } else {
