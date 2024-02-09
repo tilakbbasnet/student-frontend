@@ -26,9 +26,9 @@ export class LoginComponent implements OnInit{
 
   checkValidUser(): void {
     const loggingUser = this.loginForm.value;
-    console.log(loggingUser);
     this.loginService.checkValidUser(loggingUser).subscribe((user: User) => {
       if(user) { //if user is not null
+        console.log('User logged in successfully');
         this.router.navigate(['home']);
       } else {
         alert('Invalid username or password!!');
