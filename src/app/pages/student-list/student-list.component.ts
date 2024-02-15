@@ -41,4 +41,8 @@ export class StudentListComponent implements OnInit{
       }
     })
   }
+
+  downloadExcelFile(): void {
+    console.log("Downloading student list as excel file.");
+  }
 }
