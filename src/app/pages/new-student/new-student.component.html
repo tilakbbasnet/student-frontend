@@ -1,0 +1,67 @@
+<div class="container">
+    <form [formGroup]="studentForm" (ngSubmit)="saveStudent()">
+        <div class="row">
+            <div class="form group col-sm-4">
+                <label for="fullName">Fullname</label>
+                <input type="text" class="form-control" placeholder="Fullname" formControlName="fullName"/>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label for="email">Email Address</label>
+                <input type="text" class="form-control" placeholder="Email" formControlName="email"/>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-control" placeholder="Phone" formControlName="phone"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label for="gender">Gender</label><br/>
+                <input type="radio" value="Male" formControlName="gender"/> Male
+                <input type="radio" value="Femlae" formControlName="gender"/> Female
+                <input type="radio" value="Others" formControlName="gender"/> Others
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label for="level">Level</label>
+                <select class="form-control" formControlName="level">
+                    <option value="">Select level</option>
+                    <option value="Associate">Associate</option>
+                    <option value="Bachelors">Bachelors</option>
+                    <option value="Masters">Masters</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">Address</div>
+        <div class="row" formGroupName="addresses">
+            <div class="form-group col-sm-4">
+                <label for="type">Type</label>
+                <select class="form-control" formControlName="type">
+                    <option value="">Select Address Type</option>
+                    <option value="Temporary">Temporary</option>
+                    <option value="Permanent">Permanent</option>
+                </select>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label for="state">State</label>
+                <select class="form-control" formControlName="state">
+                    <option value="">Select State</option>
+                    <option value="TX">Texas</option>
+                    <option value="VA">Virginia</option>
+                </select>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label for="city">City</label>
+                <input type="text" class="form-control" placeholder="Enter City" formControlName="city"/>
+            </div>
+        </div>
+
+        <button class="btn btn-primary m-2" type="submit" [disabled]="disableSaveButton">Save</button>
+    </form>
+</div>
