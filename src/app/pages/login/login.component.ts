@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit{
         console.log('User logged in successfully');
         this.router.navigate(['home']);
       } else {
-        alert('Invalid username or password!! Please try again');
+        alert('Invalid user credentials');
       }
     })
   }
